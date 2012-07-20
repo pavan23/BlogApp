@@ -1,0 +1,24 @@
+<%= link_to "Create New Post", new_post_path  %>
+
+<% @posts.each do |post| %>
+
+  <div style="padding: 10px; margin: 10px; background-color: #efefef; border: 2px solid #aaa">
+  
+  <strong><%= link_to post.title, post_path(post) %></strong>
+  
+   
+    Category: <%= post.category.name %>
+  
+    
+
+    <br />
+
+    <small>Published on: <%= format_date(post.created_at) %></small>
+
+    <br />
+    
+    <%= link_to "delete", post_path(post), :method => :delete, :data => {:confirm => "are u sure?"} %>
+ <%= raw("<a href='#'>click here</a>")%>    
+  </div>
+
+<% end %>

@@ -1,0 +1,30 @@
+<h2>categories</h2>
+
+<%= link_to "View All categories", categories_path  %>
+
+<h3>Create New category</h3>
+
+<div style="border:2px solid #efefef; background-color:lightyellow; padding: 10px">
+
+
+
+<% if @category.errors.any? %>
+<div id="errors" style="color :red">
+<strong>category was not saved becoz of errors</strong>
+<ul>
+<% @category.errors.full_messages.each do |message| %>
+<li><%= message %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+
+<%= form_for @category, :url => categories_path do |f| %>
+
+name:
+<br/>
+<%= f.text_field :name %>
+<%= f.submit "save" %>
+<% end %>
+</div>
+

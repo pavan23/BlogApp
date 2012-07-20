@@ -1,0 +1,9 @@
+
+
+<%= link_to "view all posts" , posts_path %>
+
+<hr/>
+
+<h3>create new post</h3>
+
+<%= render :partial =>"form" %>

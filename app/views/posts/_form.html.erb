@@ -1,0 +1,43 @@
+<%
+  if @post.new_record?
+    url = posts_path
+    method = :post
+  else
+    url = post_path(@post)
+    method = :put
+  end
+%>
+
+
+<div style="border: 2px solid #efefef; background-color: lightyellow; padding: 10px ">
+
+  <% if @post.errors.any? %>
+    <div id="errors" style="color: red">
+      <strong>Post was not saved because of the following errors</strong>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for @post, :url => url, :method => method  do |f| %>
+  
+  Category: <%= f.select :category_id, Category.all.collect{|c| [c.name, c.id]} %>
+<br/>
+
+    Title:
+    <br />
+    <%= f.text_field :title %> <br />
+
+    Body:
+    <br />
+    <%= f.text_area :body %> <br />
+
+
+    <%= f.submit "Save this Post" %>
+
+  <% end %>
+
+</div>

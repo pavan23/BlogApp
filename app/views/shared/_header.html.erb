@@ -1,0 +1,9 @@
+<div id="header">
+<h2 class="title"> The Blog Application </h2>
+
+<div id="nav">
+  <%= link_to "Posts", posts_path,  :class => (params[:controller]=="posts" ?   "active" :"") %>
+<%= link_to "Categories", categories_path, :class => (params[:controller]=="categories" ? "active" : "") %>
+
+<div>
+</div>

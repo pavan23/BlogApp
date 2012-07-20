@@ -1,0 +1,15 @@
+<% if @post.comments.empty? %>
+  No comments found!
+<% else %>
+  <% @post.comments.each do |comment| %>
+    <div style="padding: 10px; margin: 10px; background: lightgrey; border: 2px solid green">
+      <%= simple_format(comment.comment) %>
+      <br />
+      <small>comment posted on: <%= format_date(comment.created_at) %></small>
+      
+      
+      
+      
+    </div>
+  <% end %>
+<% end %>

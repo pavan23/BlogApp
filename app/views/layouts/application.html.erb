@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>BlogApp</title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  
+  
+  <div id ="main">
+  
+  <div id="wrapper">
+  <%= render :partial => "shared/header"%>
+    
+    <div id ="flash">
+    <%= render_flash %>
+    </div>
+
+   
+    
+    <div id ="content">
+    <%= yield %>
+    </div>
+    
+    
+
+  <%= render :partial => "shared/footer"%>
+  </div>
+  </div>
+  
+  </body>
+
+</html>

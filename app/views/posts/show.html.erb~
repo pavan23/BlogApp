@@ -1,0 +1,28 @@
+<%= link_to "View All Posts", posts_path  %>
+
+<div style="padding: 10px; margin: 10px; background-color: #efefef; border: 2px solid #aaa">
+  <strong><%= @post.title %></strong>
+  <br />
+  <%= simple_format(@post.body) %>
+  <br />
+  <small>Published on: <%= format_date(@post.created_at) %></small>
+</div>
+
+
+<%= link_to "Edit this post", edit_post_path(@post) %> |
+
+<%= link_to "Delete this post", post_path(@post), :method => :delete, :data => {:confirm => "Are you sure?"} %> |
+
+<%= link_to_function "Add Comment", "$('#new_comment').show()" %> |
+
+<%= link_to_function "Delete Comment", "$('#delete_comment').show()" %>
+
+
+<h3>Comments</h3>
+<%= render :partial => "comments/form" %>
+<%= render :partial => "comments/comments" %>
+
+
+<!--  Javascript test link
+<%# link_to_function "Testing", "alert('testing the function links')" %>
+-->

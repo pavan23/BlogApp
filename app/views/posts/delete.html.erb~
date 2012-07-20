@@ -1,0 +1,8 @@
+<!-->
+<h1> delete: <%= @p.title %></h1>
+<%= flash[:notice]%><br/>
+
+<%=link_to "existing posts" ,posts_path %>
+<hr/>
+
+<--!>

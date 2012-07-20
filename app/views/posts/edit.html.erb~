@@ -1,0 +1,6 @@
+<%= link_to "View All Posts", posts_path  %> | <%= link_to "Back to the post", post_path(@post)  %>
+
+
+<h3>Edit Post</h3>
+
+<%= render :partial => "form" %>

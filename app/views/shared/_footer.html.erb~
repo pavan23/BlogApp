@@ -1,0 +1,9 @@
+<div id="footer">
+
+<center>
+
+The BlogApp has been copyright &copy; <%= Time.now.year %>. All Rights Reserved.
+
+</center>
+
+</div>
